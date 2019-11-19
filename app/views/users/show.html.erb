@@ -1,0 +1,35 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+Page for: <%= @user.name %>
+<br/>
+<br/>
+Events: 
+<% if @user.events %>
+    <h3> Upcoming Events </h3>
+    <% if @upcoming_events %>
+        <ul>
+        <% @upcoming_events.each do |ev|%>
+            <% current_event = Event.find(ev.id) %>
+            <br />
+            <li><%=current_event.title %> <%= link_to "Link", event_path(current_event) %></li>
+        <% end %>
+            
+    <% else %>
+        <p>No upcoming events.</p>
+    <% end %>
+        </ul>
+
+    <h3> Previous Events </h3>
+    <% if @prev_events %>
+        <ul>
+        <% @prev_events.each do |prev|%>
+            <% current_event = Event.find(prev.id) %>
+            <br />
+            <li><%=current_event.title %> <%= link_to "Link", event_path(current_event) %></li>
+        <% end %>
+
+    <% else %>
+        <p>No previous events to show. </p>
+    <% end %>
+    </ul>
+<% end %>

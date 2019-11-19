@@ -1,0 +1,10 @@
+<% flash.each do |key,val| %>
+    <div><%= key %> - <%= val %> </div>
+<% end %>
+
+<% if current_user %>
+    <%= current_user.name %>
+    <%=link_to "Logout", logout_path, method: :delete%>
+<% else %>
+    Not logged in.
+<% end %>

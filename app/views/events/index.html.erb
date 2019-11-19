@@ -1,0 +1,11 @@
+<br />
+<br />
+<% @events.each do |event| %>
+    <br />
+    Event: <%= event.title %>
+    <br />
+    Host: <%= event.creator.name %>
+    <br />
+    <%= link_to "See more", event_path(Event.find(event.id)) %>
+    <br />
+<% end %>

@@ -1,0 +1,2 @@
+class EventSignupsController < ApplicationController
+end

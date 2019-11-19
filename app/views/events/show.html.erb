@@ -1,0 +1,8 @@
+<h4>Event: <%=@event.title%></h4>
+<p> Hosted by: <%=link_to @event.creator.name, user_path(@event.creator.id) %> </p>
+<p> Date: <%= @date %>
+<% @attendees.each do |a| %>
+    <p><%=a.name%></p>
+<% end %>
+
+<%=link_to "Signup", event_signup_path(@event.id), method: :post%>

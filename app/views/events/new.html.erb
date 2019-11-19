@@ -1,0 +1,5 @@
+<%= form_for(@event, local:true) do |f| %>
+    <%= f.text_field :title %>
+    <%= select_date Date.today, prefix: :start_date %>
+    <%= f.submit "Create Event" %>
+<% end %>
